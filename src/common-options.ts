@@ -54,9 +54,9 @@ export default {
         loading(this: EChartsComponent, val: boolean) {
             const ctx = this
             if (val) {
-                ctx.inst.showLoading(ctx.loadingType, ctx.loadingOpts)
+                ctx.inst?.showLoading(ctx.loadingType, ctx.loadingOpts)
             } else {
-                ctx.inst.hideLoading()
+                ctx.inst?.hideLoading()
             }
         },
         autoResize(this: EChartsComponent, val: boolean) {
@@ -71,7 +71,7 @@ export default {
     methods: {
         setOption(this: EChartsComponent, option: EChartOption, opts?: EChartsOptionConfig) {
             const ctx = this
-            ctx.inst.setOption(option, {
+            ctx.inst?.setOption(option, {
                 ...(ctx.optionOpts || ctx.setOptionOpts),
                 ...opts,
             })
@@ -79,7 +79,7 @@ export default {
 
         resize(this: EChartsComponent) {
             const { clientWidth, clientHeight } = this.$el
-            this.inst.resize({
+            this.inst?.resize({
                 width: clientWidth,
                 height: clientHeight,
             })

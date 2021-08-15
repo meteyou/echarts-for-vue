@@ -23,7 +23,7 @@ export type EChartsComponent = {
     }
     $attrs: Record<string, string>
     $emit: Function
-    inst: ECharts
+    inst: ECharts | null
 
     initTheme?: string | object
     initOpts?: {

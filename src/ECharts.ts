@@ -101,7 +101,8 @@ function getVue3Render(h: Function) {
 }
 function beforeUnmount(this: EChartsComponent) {
     this.removeResizeListener()
-    this.inst.dispose()
+    this.inst?.dispose()
+    this.inst = null
 }
 
 
